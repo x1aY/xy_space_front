@@ -6,11 +6,12 @@ const getters = {
   name: state => state.user.name,
   roles: state => state.user.roles,
   permission_routes: state => state.permission.routes,
-  blogId: state => state.blog.blogId,
+  blogID: state => state.blog.blogID,
   blogTitle: state => state.blog.blogTitle,
   blogAuthor: state => state.blog.author,
   blogAuthorAvatar: state => state.blog.authorAvatar,
   blogCreateTime: state => state.blog.createTime,
-  blogPic: state => state.blog.blogPic
+  blogPic: state => state.blog.blogPic,
+  blogContent: state => state.blog.content
 }
 export default getters

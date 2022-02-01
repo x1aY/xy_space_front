@@ -10,3 +10,13 @@ export function getBlogList(pagination) {
     }
   })
 }
+
+export function getBlogBaseInfo(pageSize) {
+  return request({
+    url: '/myScripts/blogBaseInfo',
+    method: 'post',
+    data: {
+      perPage: pageSize
+    }
+  })
+}

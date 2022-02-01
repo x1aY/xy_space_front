@@ -6,7 +6,7 @@
         <h2 class="ui center aligned header" v-text="blogTitle"/>
         <div class="ui horizontal link list">
           <div class="item">
-            <img v-bind:src="myAvatar" class="ui avatar image" alt="用户头像">
+            <img v-bind:src="blogAuthorAvatar" class="ui avatar image" alt="用户头像">
             <div class="content"><a class="header">{{blogAuthor}}</a></div>
           </div>
           <div class="item"> <i class="calendar icon"></i> {{blogCreateTime}} </div>
@@ -16,10 +16,10 @@
         id="blogContent"
         style="padding:35px 20px 50px 20px"
         class="ui attached segment typo"
-        v-html="htmlTest"
+        v-html="blogContent"
       />
       <div class="ui bottom attached segment">
-        <img :src=myAvatar class="ui fluid rounded image" alt="文章封面">
+        <img :src=blogPic class="ui fluid rounded image" alt="文章封面">
       </div>
       <div class="ui attached positive message">
         <div class="ui list" >
@@ -42,17 +42,18 @@ export default {
   components: { Footer },
   data() {
     return {
-      myAvatar,
-      htmlTest: ''
+      myAvatar
     }
   },
   computed: {
     ...mapGetters([
-      'blogId',
+      'blogID',
       'blogTitle',
       'blogAuthor',
       'blogAuthorAvatar',
-      'blogCreateTime'
+      'blogCreateTime',
+      'blogPic',
+      'blogContent'
     ])
   },
   methods: {

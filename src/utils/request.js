@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Message } from 'element-ui'
 export function request(config) {
   const instance = axios.create({
-    timeout: 5000,
+    timeout: 100000,
     crossOrigin: true,
     withCredentials: true,
     xhrFields: { withCredentials: true },

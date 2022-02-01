@@ -1,21 +1,25 @@
 
 const getDefaultState = () => {
   return {
-    blogId: 1,
+    blogID: 1,
     blogTitle: '标题',
     author: 'x1aY',
     authorAvatar: '用户头像',
     createTime: '2022-01-01 00:00',
     blogPic: '文章封面',
-    blogInfo: null
+    blogType: '文章类型',
+    desc: '文本概述',
+    thumbs: 0,
+    views: 0,
+    content: '文章内容'
   }
 }
 
 const state = getDefaultState()
 
 const mutations = {
-  SET_BLOG_ID: (state, blogId) => {
-    state.blogId = blogId
+  SET_BLOG_ID: (state, blogID) => {
+    state.blogID = blogID
   },
   SET_BLOG_TITLE: (state, blogTitle) => {
     state.blogTitle = blogTitle
@@ -32,21 +36,22 @@ const mutations = {
   SET_BLOG_PIC: (state, blogPic) => {
     state.blogPic = blogPic
   },
-  SET_BLOG_INFO: (state, blogInfo) => {
-    state.blogInfo = blogInfo
+  SET_CONTENT: (state, content) => {
+    state.content = content
   }
 }
 
 const actions = {
   setCurrBlog({ commit }, blogInfo) {
-    const { blogId, title, author, authorAvatar, createTime, blogPic } = blogInfo
+    const { blogID, title, author, authorAvatar, createTime, blogPic, content } = blogInfo
     return new Promise(resolve => {
       commit('SET_BLOG_TITLE', title)
-      commit('SET_BLOG_ID', blogId)
+      commit('SET_BLOG_ID', blogID)
       commit('SET_AUTHOR', author)
       commit('SET_AUTHOR_AVATAR', authorAvatar)
       commit('SET_CREATE_TIME', createTime)
       commit('SET_BLOG_PIC', blogPic)
+      commit('SET_CONTENT', content)
       resolve()
     })
   }
